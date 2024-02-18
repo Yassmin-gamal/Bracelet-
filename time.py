@@ -1,5 +1,6 @@
 import utime
 import time 
+from machine import Pin, Timer
 
 
 def time2 ():
@@ -18,7 +19,7 @@ print(t)
 
 
 
-from machine import Pin, Timer
+ 
 led = Pin(15, Pin.OUT)
 timer = Timer()
 
