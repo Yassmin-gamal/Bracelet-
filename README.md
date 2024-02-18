@@ -52,7 +52,7 @@ where:
               t is a time vector.
 
 
-# decision algorithm
+# ]ecision algorithm
 In order to trigger the alarm and activate the bracelet, a prolonged decrease in both heart rate and oxygen saturation is required. However, relying solely on a single regression slope with a fixed threshold for triggering the alarm proved to be too sensitive to fluctuations in oxygen saturation.
 
 To address this issue, specific threshold values were established for both the oxygen saturation (SPO2) slope and heart rate (HR) slope. The SPO2 slope threshold represents the minimum slope value of oxygen saturation that is not considered dangerous and was set at -0.05 %s. Similarly, the HR slope threshold, indicating the minimum slope value of heart rate that is not considered dangerous, was set at -0.2 bps [42].
