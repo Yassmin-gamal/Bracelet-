@@ -10,7 +10,7 @@ https://github.com/Yassmin-gamal/Bracelet-/assets/66153260/62801a7b-30ee-4c7b-90
 
 
 
-#Decision algorithm
+# Decision algorithm
 Based on our experimentation and evaluation of various machine learning algorithms, the XGBoost Classifier emerged as the top performer with the highest accuracy of 93.6%. It is renowned for its speed and accuracy and is widely used in data science competitions.
 
 The Gaussian SVM classifier, Linear SVM, and Regular boosting classifier also delivered notable results with an accuracy of 91%. These algorithms have proven to be effective in classification tasks as will be explained in section 5.2.1.
