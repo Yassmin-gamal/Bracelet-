@@ -1,68 +1,53 @@
+from time import sleep
 from machine import Pin, PWM
+# this file for High | Low heart rate
+
+from machine import    SoftI2C, Pin
+from machine import Pin, Timer
+import machine
+import time
+import utime
+
+from time import sleep
+import boost
+from utime import ticks_diff, ticks_us
+from max30102 import MAX30102, MAX30105_PULSE_AMP_MEDIUM
+from max30102 import hrcalc
+from ulab import numpy as np
  
- 
-class Servo:
-    """ A simple class for controlling a 9g servo with the Raspberry Pi Pico.
- 
-    Attributes:
- 
-        minVal: An integer denoting the minimum duty value for the servo motor.
- 
-        maxVal: An integer denoting the maximum duty value for the servo motor.
- 
-    """
- 
-    def __init__(self, pin: int or Pin or PWM, minVal=2500, maxVal=7500):
-        """ Creates a new Servo Object.
- 
-        args:
- 
-            pin (int or machine.Pin or machine.PWM): Either an integer denoting the number of the GPIO pin or an already constructed Pin or PWM object that is connected to the servo.
- 
-            minVal (int): Optional, denotes the minimum duty value to be used for this servo.
- 
-            maxVal (int): Optional, denotes the maximum duty value to be used for this servo.
- 
-        """
- 
-        if isinstance(pin, int):
-            pin = Pin(pin, Pin.OUT)
-        if isinstance(pin, Pin):
-            self.__pwm = PWM(pin)
-        if isinstance(pin, PWM):
-            self.__pwm = pin
-        self.__pwm.freq(50)
-        self.minVal = minVal
-        self.maxVal = maxVal
- 
-    def deinit(self):
-        """ Deinitializes the underlying PWM object.
- 
-        """
-        self.__pwm.deinit()
- 
-    def goto(self, value: int):
-        """ Moves the servo to the specified position.
- 
-        args:
- 
-            value (int): The position to move to, represented by a value from 0 to 1024 (inclusive).
- 
-        """
-        if value < 0:
-            value = 0
-        if value > 1024:
-            value = 1024
-        delta = self.maxVal-self.minVal
-        target = int(self.minVal + ((value / 1024) * delta))
-        self.__pwm.duty_u16(target)
- 
-    def middle(self):
-        """ Moves the servo to the middle.
-        """
-        self.goto(512)
- 
-    def free(self):
-        """ Allows the servo to be moved freely.
-        """
-        self.__pwm.duty_u16(0)
+import ulab
+
+
+pwm = PWM(Pin(15))
+pwm.freq(50)
+time = [1193559, 1195559, 1197598, 1199598, 1201617, 1203617, 1205617, 1207645, 1209676, 1211672]
+spo2 = [98.69, 98.69, 99.04, 99.18, 98.67, 98.59, 98.59, 98.03, 98.47, 99.12]
+HreatRate = [70, 71.69, 68.04, .18, 98.67, 98.59, 98.59, 98.03, 98.47, 99.12]
+led_pin = machine.Pin(14, machine.Pin.OUT)
+
+
+def Servo():
+         for position in range(1000,9000,50):
+             pwm.duty_u16(position)
+             sleep(0.01)
+#              print("568")
+         for position in range(9000,1000,-50):
+             pwm.duty_u16(position)
+             sleep(0.01)
+             
+        
+          
+def main():
+                        
+                        led_pin.on()
+                        utime.sleep_ms(3000)
+                        led_pin.off()
+                        print( "EMERGENCY !! ")
+                        print(" \n")
+                        print(" INFLATABLE DEVICE WILL OPEN !! ")
+                        Servo()
+    
+     
+if __name__ == '__main__':
+    main()
+   
