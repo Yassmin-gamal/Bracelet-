@@ -13,7 +13,7 @@ https://github.com/Yassmin-gamal/Bracelet-/assets/66153260/62801a7b-30ee-4c7b-90
 # Decision algorithm
 Based on our experimentation and evaluation of various machine learning algorithms, the XGBoost Classifier emerged as the top performer with the highest accuracy of 93.6%. It is renowned for its speed and accuracy and is widely used in data science competitions.
 
-The Gaussian SVM classifier, Linear SVM, and Regular boosting classifier also delivered notable results with an accuracy of 91%. These algorithms have proven to be effective in classification tasks as will be explained ز
+The Gaussian SVM classifier, Linear SVM, and Regular boosting classifier also delivered notable results with an accuracy of 91%. These algorithms have proven to be effective in classification tasks as will be explained 
 
 In terms of deep learning approaches, the LSTM model utilizing all five features achieved the highest accuracy of 91%. LSTM as will be explained, a type of recurrent neural network, is particularly suitable for analyzing time series data and has demonstrated its capability in various applications. The simpler DNN model achieved an accuracy of 90% as will be explained , further highlighting the effectiveness of deep learning methods.
 
@@ -21,14 +21,14 @@ Considering the overall performance and results obtained from our experimentatio
 
 
 
-#The immediate loss of consciousness situation
+# The immediate loss of consciousness situation
  To mitigate the risk of undetected dangerous situations, an additional safety measure can be implemented by integrating an optical heart rate and oxygen saturation sensor, specifically a pulse oximeter, into the wristband. This sensor uses infrared light to see the expansion of your arteries as your heart pumps blood through them. 
 
 By incorporating a pulse oximeter , it becomes possible to monitor the individual's oxygen saturation levels. A significant drop in oxygen saturation can be indicative of the loss of consciousness underwater and the initial stages of drowning. This enables the system to detect potential drowning incidents that may go unnoticed through other means of detection.
 
 The inclusion of a pulse oximeter enhances the effectiveness and reliability of the sensor wristband, providing an additional layer of safety to prevent drowning in unusual and potentially dangerous scenarios.
 
- #The Disturbed Oxygen Saturation Values
+ # The Disturbed Oxygen Saturation Values
 To address the variability and outliers in oxygen saturation values, a method based on the interquartile range (IQR) is implemented. The oxygen saturation values are assumed to follow a normal distribution. The IQR, which represents the range of the middle 50% of the dataset, is used as a measure of variability.
 
 The process of removing outliers illustrated is performed locally within consecutive time windows, each containing 10 measurements. The oxygen saturation values within each window are sorted, and based on the sorted sequence, the IQR is calculated using Equation (1). The lower and upper limits for non-outlier data are then determined using Equation (2) and Equation (3) respectively. When a new oxygen saturation value is received, all previously rejected values from the calculations are reconsidered. This ensures that outliers that were initially discarded are reevaluated in light of the most recent data. 
