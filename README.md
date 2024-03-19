@@ -68,5 +68,9 @@ Integrating the two cases of a prolonged decrease in heart rate and oxygen satur
 By automating the activation process, we enhance the efficiency and effectiveness of the drowning detection and rescue system. It eliminates the need for manual intervention or delayed response, allowing for rapid assistance and potentially saving lives in emergency situations. The integration of the automatic activation mechanism further enhances the overall safety and reliability of the system.
 
 
-
+## Authors
+1. Yassmin Gamal.
+2. Yara Khalid.
+3. Menna Swilam.
+ 
 
